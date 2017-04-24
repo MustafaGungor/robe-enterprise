@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>robe-enterprise</artifactId>
+        <groupId>com.mebitech.robe</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mebitech.robe.persistence</groupId>
+    <artifactId>robe-persistence</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>robe-persistence-jpa</module>
+        <module>robe-persistence-api</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.mebitech.robe.persistence.api</groupId>
+                <artifactId>robe-persistence-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mebitech.robe.persistence.jpa</groupId>
+                <artifactId>robe-persistence-jpa</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+    </dependencies>
+</project>

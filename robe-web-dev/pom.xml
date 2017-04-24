@@ -1,0 +1,85 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>robe-enterprise</artifactId>
+        <groupId>com.mebitech.robe</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mebitech.robe.web.dev</groupId>
+    <artifactId>robe-web-dev</artifactId>
+    <packaging>jar</packaging>
+
+    <name>robe-web-dev</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <start-class>com.mebitech.robe.web.dev.Application</start-class>
+    </properties>
+
+    <dependencies>
+        <!-- Compile -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.mebitech.robe.web</groupId>
+            <artifactId>robe-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mebitech.robe.assets</groupId>
+            <artifactId>robe-assets</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mebitech.robe.quartz</groupId>
+            <artifactId>robe-quartz</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mebitech.robe.mail</groupId>
+            <artifactId>robe-mail</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mebitech.robe.persistence.jpa</groupId>
+            <artifactId>robe-persistence-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.5.1.RELEASE</version>
+                <configuration>
+                    <addResources>true</addResources>
+                    <mainClass>${start-class}</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
